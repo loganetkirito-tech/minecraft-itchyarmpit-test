@@ -60,7 +60,7 @@ public class SeaPillarFeature extends Feature<NoneFeatureConfiguration> {
                     probe.set(cx + dx, y, cz + dz);
                     BlockState old = world.getBlockState(probe);
                     // Do not excavate existing terrain, but replace water and plants.
-                    if (!old.isAir() && old.getFluidState().isEmpty() && !old.canBeReplaced()) continue;
+                    if (!old.isAir() && old.getFluidState().isEmpty() && !old.getMaterial().isReplaceable()) continue;
                     boolean edge = d > (r - 1.9) * (r - 1.9);
                     BlockState stone = Blocks.STONE.defaultBlockState();
                     if (edge && random.nextInt(11) == 0) stone = Blocks.MOSSY_COBBLESTONE.defaultBlockState();
