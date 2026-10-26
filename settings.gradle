@@ -1,1 +1,9 @@
-rootProject.name='windy-forge-1.18.2'
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net/' }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'windy-forge-1.18.2'
