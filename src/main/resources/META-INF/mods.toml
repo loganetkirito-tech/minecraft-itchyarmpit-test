@@ -1,0 +1,21 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="LGPL-3.0-only"
+[[mods]]
+modId="windy"
+version="1.2.1-port-alpha"
+displayName="Windy: Configurable (1.18.2 community port)"
+authors="BonfireMC, Pathmakers Studio; 1.18.2 adaptation"
+description="Client-side wind particles ported to Forge 1.18.2"
+[[dependencies.windy]]
+modId="forge"
+mandatory=true
+versionRange="[40.0,)"
+ordering="NONE"
+side="CLIENT"
+[[dependencies.windy]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.18.2,1.18.3)"
+ordering="NONE"
+side="CLIENT"
