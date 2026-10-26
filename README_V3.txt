@@ -1,1 +1,0 @@
-V3: thick twisted columns, flat caps and trees generated directly on each pillar. Original island density functions preserved. Java code is untested; build through GitHub Actions. Leaves are oak with biome tint, not individually orange/yellow.\n
