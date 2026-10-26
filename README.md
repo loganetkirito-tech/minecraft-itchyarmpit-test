@@ -1,24 +1,21 @@
-# TWMTW Pillars – Forge 1.18.2
+# TWMTW Pillars 1.18.2 — source prototype
 
-Portage expérimental du générateur de piliers rocheux de TWMTW, inspiré de BWG, avec les tailles d'origine mais une forme procédurale approximative.
+## Important
+This is **source code**, **not a compiled Forge mod**. The generator is an independent visual approximation of the TWMTW/BWG sea pillars, not an exact port of BWG's source. It is **not game-tested**. The ZIP includes a modified FIX3 datapack that REQUIRES the compiled mod; do not install the datapack before the mod.
 
-## Compiler sans installer Gradle (GitHub Actions)
+## Compilation
+1. Install JDK 17 and Gradle 7.6 (or use a matching Forge MDK Gradle wrapper).
+2. In this project folder, run `gradle build` with Internet access for ForgeGradle dependencies.
+3. Copy `build/libs/twmtw-pillars-1.18.2-0.1.0.jar` to `mods/`.
+4. Copy `TWMTW_Islands_Pillars_1.18.2_DATAPACK.zip` to a **new** test world's `datapacks/`, **replacing FIX3**.
+5. Keep Forge Tectonic 2.3.5a and Regions Unexplored enabled.
 
-1. Crée un dépôt GitHub vide (public ou privé), sans README généré.
-2. Sur sa page, utilise **Add file → Upload files**, puis dépose **le CONTENU extrait de ce ZIP** à la racine du dépôt, y compris le dossier `.github` (dossier caché). Sinon passe par GitHub Desktop pour importer tous les fichiers.
-3. Clique sur **Commit changes**.
-4. Ouvre l'onglet **Actions** et sélectionne **Build TWMTW Pillars (Forge 1.18.2)**. Si le push a déjà démarré le build, attends le résultat; sinon clique **Run workflow**.
-5. Si le build réussit, clique sur l'exécution, rubrique **Artifacts**, et télécharge **TWMTW-Pillars-Forge-1.18.2**. Dézippe l'archive d'artifacts pour trouver le `.jar`.
-6. Si le build échoue, ouvre l'étape **Build and reobfuscate Forge mod**, copie la fin des erreurs et partage-les. Le projet n'a pas été compilé/testé dans Minecraft à ce stade.
+## Notes / limits
+- This prototype spawns stone / mossy-cobble / moss pillars at the ocean floor, using original size ranges (15–75 height; 7–20 radius) and feature rarity 1/5. It uses an independent approximation of the contour; no precise BWG parity is claimed.
+- No Regions Unexplored blocks are needed yet. RU integration is reserved for further iteration so that unknown block IDs do not prevent world loading.
+- Tectonic Islands noise/density functions and island size/frequency settings are not changed relative to FIX3.
+- Requires **compilation and in-game testing**. API compatibility has not been verified against a Forge development environment. If Gradle reports errors, use its build output to fix the source.
+- This procedural feature can be performance-intensive (large radius). Test on a separate world.
 
-## À ne pas installer prématurément
-
-- Le datapack `TWMTW_Islands_Pillars_1.18.2_DATAPACK.zip` dépend du mod: conserver FIX 3 tant que le `.jar` n'est pas compilé.
-- Garder Tectonic 2.3.5a et Regions Unexplored activés.
-- Tester dans un nouveau monde, avec une copie de sauvegarde.
-
-## Notes techniques
-
-- Minecraft 1.18.2, Forge 40.3.12, JDK 17, Gradle 7.6.1 et ForgeGradle 5.1.
-- Le générateur est une réimplémentation expérimentale, pas l'algorithme BWG exact.
-- Il n'est pas garanti que le premier build réussisse; utiliser le journal Actions pour corriger les incompatibilités Java/Forge.
+## Correction du 26 octobre 2026
+Le type `RandomSource` (API plus récente) a été remplacé par `java.util.Random` pour cibler Minecraft 1.18.2. Projet toujours NON compilé et NON testé : ce système ne dispose pas de Gradle/ForgeGradle, et le téléchargement externe est bloqué.
