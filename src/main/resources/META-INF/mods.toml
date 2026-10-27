@@ -1,19 +1,19 @@
 modLoader="javafml"
 loaderVersion="[40,)"
-license="LGPL-3.0-or-later"
+license="MIT"
 [[mods]]
-modId="particularwater1182"
-version="0.1.0-alpha"
-displayName="Particular Water FX 1.18.2 (experimental port)"
-authors="Community adaptation; Particular original by Leclowndu93150 and Chai"
-description="Experimental partial port of Particular water particle textures/effects."
-[[dependencies.particularwater1182]]
+modId="cosycritters"
+version="0.3.3-port-alpha1"
+displayName="Cosy Critters (1.18.2 experimental port)"
+authors="PigCart; community 1.18.2 adaptation"
+description="Experimental client-only visual ambience with birds, moths and spiders. Not a full backport of original behavior."
+[[dependencies.cosycritters]]
 modId="forge"
 mandatory=true
 versionRange="[40.0,)"
 ordering="NONE"
 side="CLIENT"
-[[dependencies.particularwater1182]]
+[[dependencies.cosycritters]]
 modId="minecraft"
 mandatory=true
 versionRange="[1.18.2,1.18.3)"

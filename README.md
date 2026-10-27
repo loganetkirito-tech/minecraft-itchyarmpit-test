@@ -1,9 +1,23 @@
-# Particular Water FX 1.18.2 — ALPHA / partial adaptation
+# Cosy Critters — experimental Forge 1.18.2 port alpha 1
 
-This is NOT a full port of Particular 1.5.7. It reuses original Particular water particle textures and particle sprite definitions, with new simple Forge 1.18.2 client-side spawning: surface ripples, limited entity-entry splashes, and experimental foam/spray. It does not include Particular's complex 3D rendering, waterfall detection, or original Mixin mechanics. Expect visual and behavioral differences.
+Original mod by PigCart, licensed MIT: https://github.com/PigCart/cosy-critters
+This separate 1.18.2 adaptation is a partial reimplementation with the original MIT-licensed textures.
 
-Build on GitHub Actions: extract archive to root of repository, then Actions → Build Particular Water FX Forge 1.18.2 → Run workflow. The resulting mod JAR is the artifact. Remove any incompatible Particular 1.20.1 JAR before testing.
+## Includes
+- Birds (visual sprite particles, simple groups, random airborne movement)
+- Moths (visual sprite particles, attracted to the vicinity of bright blocks in dark areas)
+- Tiny spiders (visual sprite particles appearing from cobwebs)
 
-Original Particular by Leclowndu93150 / Chai, LGPL-3.0. This adaptation redistributes original textures under the same license. See original source https://github.com/Leclowndu93150/Particular .
+## Does NOT include
+Original flock/landing/fleeing AI, exact bird whitelists, original complete UI,
+all block interactions, or original advanced spider wall-climbing.
+There is no Hat Man in this alpha.
 
-This release is uncompiled and untested; share the first compilation error for correction.
+## Build
+Import ZIP contents at the repository root and run GitHub Actions build.
+Target: Java 17, Forge 1.18.2-40.3.12.
+
+## Important
+The Java project is uncompiled and untested in-game. The JAR uploaded by the user
+is not compatible with 1.18.2 by itself. Do not run this alpha alongside original
+Cosy Critters. Keep the included LICENSE file as required by MIT.
