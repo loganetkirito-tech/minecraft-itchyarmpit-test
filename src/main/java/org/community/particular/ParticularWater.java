@@ -28,7 +28,7 @@ import java.util.Random;
 /** Partial water FX adaptation: source textures originate with Particular. */
 @Mod("particularwater1182")
 public class ParticularWater {
-    private static final String ID="particular";
+    private static final String ID="particularwater1182";
     private static final DeferredRegister<ParticleType<?>> PARTICLES=DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, ID);
     public static final RegistryObject<SimpleParticleType> SPLASH=PARTICLES.register("water_splash",()->new SimpleParticleType(false));
     public static final RegistryObject<SimpleParticleType> RIPPLE=PARTICLES.register("water_ripple",()->new SimpleParticleType(false));
@@ -39,6 +39,7 @@ public class ParticularWater {
     public static class FactoryRegister {
         @SubscribeEvent public static void setup(ParticleFactoryRegisterEvent e){
             Minecraft mc=Minecraft.getInstance();
+            if (mc.particleEngine == null) return;
             mc.particleEngine.register(SPLASH.get(), s->new Factory(s,0));
             mc.particleEngine.register(RIPPLE.get(), s->new Factory(s,1));
             mc.particleEngine.register(FOAM.get(), s->new Factory(s,2));
