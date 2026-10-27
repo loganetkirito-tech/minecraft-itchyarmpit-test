@@ -1,18 +1,9 @@
-# Windy: Configurable — Forge 1.18.2 port (experimental)
+# Particular Water FX 1.18.2 — ALPHA / partial adaptation
 
-Adaptation du JAR `Windy_Forge-1.20.1-v1.2.1.jar` pour Minecraft **1.18.2 / Forge 40.3.12**.
+This is NOT a full port of Particular 1.5.7. It reuses original Particular water particle textures and particle sprite definitions, with new simple Forge 1.18.2 client-side spawning: surface ripples, limited entity-entry splashes, and experimental foam/spray. It does not include Particular's complex 3D rendering, waterfall detection, or original Mixin mechanics. Expect visual and behavioral differences.
 
-**Important :** portage *fonctionnellement simplifié*, et non portage exact du code original. Les textures des particules proviennent du JAR LGPL-3.0 fourni. La logique Java a été réécrite pour 1.18.2 avec les événements Forge et ne requiert pas Mixin.
+Build on GitHub Actions: extract archive to root of repository, then Actions → Build Particular Water FX Forge 1.18.2 → Run workflow. The resulting mod JAR is the artifact. Remove any incompatible Particular 1.20.1 JAR before testing.
 
-Fonctions prévues : particules wind/strong_wind, influence météo, configuration de densité et des altitudes, accès au ciel. La configuration détaillée par biome, intégration LivingWind et écran de configuration de la version 1.20.1 ne sont pas encore reproduits.
+Original Particular by Leclowndu93150 / Chai, LGPL-3.0. This adaptation redistributes original textures under the same license. See original source https://github.com/Leclowndu93150/Particular .
 
-## Compilation
-
-1. Envoie le contenu de cette archive **à la racine** d'un dépôt GitHub.
-2. Actions > Build Windy Forge 1.18.2 > Run workflow (ou push sur main).
-3. Télécharge l'artifact Windy-Forge-1.18.2 et utilise son JAR dans `mods/` du client Minecraft.
-4. Paramètres : `config/windy-1.18.2.properties` après premier démarrage.
-
-Aucun JAR n'a été compilé ni testé dans Minecraft dans cet environnement. Signaler la première erreur `error:` si GitHub échoue.
-
-Crédits : BonfireMC et Pathmakers Studio. Licence LGPL-3.0-only, consulter les auteurs originaux.
+This release is uncompiled and untested; share the first compilation error for correction.
